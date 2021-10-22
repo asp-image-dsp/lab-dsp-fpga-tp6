@@ -1,0 +1,164 @@
+# Reading pref.tcl
+# do FIR_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/hdl/dafsm.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:40 on Oct 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/hdl/dafsm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling package da_package
+# -- Loading package da_package
+# -- Compiling entity dafsm
+# -- Compiling architecture flex of dafsm
+# End time: 20:43:40 on Oct 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/hdl/case3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:40 on Oct 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/hdl/case3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity case3
+# -- Compiling architecture LCs of case3
+# End time: 20:43:41 on Oct 28,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:49:56 on Oct 28,2021
+# vcom -reportprogress 300 -work work C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity dafsm_tb
+# -- Compiling architecture dafsm_tb_arc of dafsm_tb
+# -- Loading package da_package
+# -- Loading entity dafsm
+# ** Warning: C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd(39): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd(40): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd(41): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/Users/facun/OneDrive/Desktop/ITBA/9C_DSP-FPGA/lab-dsp-fpga-tp6/ex1/quartus/tests/dafsm_tb.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 20:49:56 on Oct 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+vsim work.dafsm_tb
+# vsim work.dafsm_tb 
+# Start time: 20:50:08 on Oct 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.da_package
+# Loading work.dafsm_tb(dafsm_tb_arc)
+# Loading work.dafsm(flex)
+# Loading work.case3(lcs)
+vsim work.dafsm_tb
+# End time: 20:51:12 on Oct 28,2021, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 0
+# vsim work.dafsm_tb 
+# Start time: 20:51:12 on Oct 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.da_package
+# Loading work.dafsm_tb(dafsm_tb_arc)
+# Loading work.dafsm(flex)
+# Loading work.case3(lcs)
+add wave -position insertpoint  \
+sim:/dafsm_tb/x_0 \
+sim:/dafsm_tb/x_1 \
+sim:/dafsm_tb/x_2
+run
+add wave -position insertpoint  \
+sim:/dafsm_tb/y
+restart -f
+run
+run
+run -next
+run
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/dafsm_tb/clk
+restart -f
+run -next
+run -next
+run -next
+run -next
+step -over
+step -over
+run -continue
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 22:05:19 on Oct 28,2021, Elapsed time: 1:14:07
+# Errors: 0, Warnings: 0

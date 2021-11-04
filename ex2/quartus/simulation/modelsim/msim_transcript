@@ -1,0 +1,345 @@
+# Reading pref.tcl
+# do ex2_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:29 on Nov 04,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 
+# -- Loading package STANDARD
+# -- Compiling package integer_package
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package integer_package
+# -- Compiling entity fir
+# -- Compiling architecture basic_fir of fir
+# -- Compiling architecture symmetry_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture csd_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture pipeline_fir of fir
+# -- Loading entity fir
+# End time: 19:54:30 on Nov 04,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:46 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 19:54:46 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# vsim work.fir_tb 
+# Start time: 19:54:49 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(pipeline_fir)
+vsim work.fir_tb
+# End time: 19:54:57 on Nov 04,2021, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 0
+# vsim work.fir_tb 
+# Start time: 19:54:57 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(pipeline_fir)
+vsim work.fir_tb
+# End time: 19:55:00 on Nov 04,2021, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim work.fir_tb 
+# Start time: 19:55:00 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(pipeline_fir)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/fir_tb/y \
+sim:/fir_tb/x \
+sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlft8ex3cm".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8ex3cm
+run -all
+# ** Fatal: (vsim-3421) Value -480 is out of range -128 to 127.
+#    Time: 100 ns  Iteration: 0  Process: /fir_tb/dut/fir_process File: C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd Line: 97
+# Fatal error in Process fir_process at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd line 97
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 97 Process fir_process
+# 
+# Break key hit
+quit -sim
+# End time: 19:55:58 on Nov 04,2021, Elapsed time: 0:00:58
+# Errors: 1, Warnings: 2
+vcom -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:56:03 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 19:56:03 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# vsim work.fir_tb 
+# Start time: 19:56:07 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(symmetry_fir)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/fir_tb/x \
+sim:/fir_tb/y \
+sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlft4sh39t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4sh39t
+run -all
+# ** Fatal: (vsim-3421) Value -352 is out of range -128 to 127.
+#    Time: 100 ns  Iteration: 0  Process: /fir_tb/dut/fir_process File: C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd Line: 59
+# Fatal error in Process fir_process at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd line 59
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 59 Process fir_process
+# 
+quit -sim
+vcom -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# End time: 19:59:46 on Nov 04,2021, Elapsed time: 0:03:39
+# Errors: 1, Warnings: 2
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:59:46 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 19:59:46 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# vsim work.fir_tb 
+# Start time: 19:59:49 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(symmetry_fir)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/fir_tb/x \
+sim:/fir_tb/y \
+sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlftyf35xj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftyf35xj
+run -all
+# ** Fatal: (vsim-3421) Value -352 is out of range -128 to 127.
+#    Time: 100 ns  Iteration: 0  Process: /fir_tb/dut/fir_process File: C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd Line: 59
+# Fatal error in Process fir_process at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd line 59
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 59 Process fir_process
+# 
+vcom -93 -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:02 on Nov 04,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 
+# -- Loading package STANDARD
+# -- Compiling package integer_package
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package integer_package
+# -- Compiling entity fir
+# -- Compiling architecture basic_fir of fir
+# -- Compiling architecture symmetry_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture csd_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture pipeline_fir of fir
+# -- Loading entity fir
+# End time: 20:01:02 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+quit -sim
+# End time: 20:01:39 on Nov 04,2021, Elapsed time: 0:01:50
+# Errors: 1, Warnings: 2
+vcom -93 -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:42 on Nov 04,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/hdl/fir.vhd 
+# -- Loading package STANDARD
+# -- Compiling package integer_package
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package integer_package
+# -- Compiling entity fir
+# -- Compiling architecture basic_fir of fir
+# -- Compiling architecture symmetry_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture csd_fir of fir
+# -- Loading entity fir
+# -- Compiling architecture pipeline_fir of fir
+# -- Loading entity fir
+# End time: 20:01:42 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:43 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 20:01:43 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# vsim work.fir_tb 
+# Start time: 20:01:44 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(symmetry_fir)
+add wave -position end  sim:/fir_tb/x
+add wave -position end  sim:/fir_tb/y
+add wave -position end  sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlft5qzeyq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5qzeyq
+run -all
+# Break key hit
+vcom -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:03:14 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 20:03:14 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# End time: 20:03:20 on Nov 04,2021, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 2
+# vsim work.fir_tb 
+# Start time: 20:03:20 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(csd_fir)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/fir_tb/x \
+sim:/fir_tb/y \
+sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlftcayxf7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcayxf7
+run -all
+vcom -work work {C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:04:37 on Nov 04,2021
+# vcom -reportprogress 300 -work work C:/Users/Lucas A. Kammann/Desktop/projects/lab-dsp-fpga-tp6/ex2/quartus/tests/fir_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package integer_package
+# -- Compiling entity fir_tb
+# -- Compiling architecture fir_tb_arch of fir_tb
+# -- Loading entity fir
+# End time: 20:04:37 on Nov 04,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.fir_tb
+# End time: 20:04:43 on Nov 04,2021, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 2
+# vsim work.fir_tb 
+# Start time: 20:04:43 on Nov 04,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.integer_package
+# Loading work.fir_tb(fir_tb_arch)
+# Loading work.fir(pipeline_fir)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/fir_tb/x \
+sim:/fir_tb/y \
+sim:/fir_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 2892
+#           Attempting to use alternate WLF file "./wlfttd5t2t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttd5t2t
+run -all
+# End time: 20:05:39 on Nov 04,2021, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 2
